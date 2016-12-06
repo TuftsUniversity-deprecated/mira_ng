@@ -1,0 +1,164 @@
+Metrics/MethodLength:
+  Max: 15
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle, SupportedLastArgumentHashStyles.
+# SupportedLastArgumentHashStyles: always_inspect, always_ignore, ignore_implicit, ignore_explicit
+Style/AlignHash:
+  Exclude:
+    - 'config/initializers/simple_form.rb'
+
+# Offense count: 2
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: nested, compact
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'app/controllers/curation_concerns/tufts_voting_records_controller.rb'
+    - 'test/test_helper.rb'
+
+# Offense count: 15
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'app/controllers/application_controller.rb'
+    - 'app/controllers/catalog_controller.rb'
+    - 'app/controllers/curation_concerns/tufts_voting_records_controller.rb'
+    - 'app/forms/curation_concerns/tufts_voting_record_form.rb'
+    - 'app/helpers/application_helper.rb'
+    - 'app/helpers/curation_concerns_helper.rb'
+    - 'app/models/ability.rb'
+    - 'app/models/user.rb'
+    - 'config/application.rb'
+    - 'db/migrate/20160510183509_devise_create_users.rb'
+    - 'db/migrate/20160510183510_add_devise_guests_to_users.rb'
+    - 'db/migrate/20160510183511_create_version_committers.rb'
+    - 'db/migrate/20160510183512_create_checksum_audit_logs.rb'
+    - 'db/migrate/20160510183513_create_single_use_links.rb'
+    - 'db/migrate/20160510183514_create_operations.rb'
+
+# Offense count: 8
+# Cop supports --auto-correct.
+Style/EmptyLines:
+  Exclude:
+    - 'Gemfile'
+    - 'app/controllers/application_controller.rb'
+    - 'app/models/solr_document.rb'
+    - 'app/models/user.rb'
+    - 'config/application.rb'
+    - 'db/migrate/20160510183509_devise_create_users.rb'
+
+# Offense count: 3
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: empty_lines, no_empty_lines
+Style/EmptyLinesAroundBlockBody:
+  Exclude:
+    - 'Gemfile'
+    - 'db/schema.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: empty_lines, no_empty_lines
+Style/EmptyLinesAroundClassBody:
+  Exclude:
+    - 'app/models/search_builder.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+Style/EmptyLinesAroundMethodBody:
+  Exclude:
+    - 'db/migrate/20160510183510_add_devise_guests_to_users.rb'
+
+# Offense count: 6
+# Cop supports --auto-correct.
+# Configuration parameters: AllowForAlignment, ForceEqualSignAlignment.
+Style/ExtraSpacing:
+  Exclude:
+    - 'bin/setup'
+    - 'db/migrate/20160510183501_create_searches.blacklight.rb'
+    - 'db/schema.rb'
+
+# Offense count: 4
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, UseHashRocketsWithSymbolValues.
+# SupportedStyles: ruby19, ruby19_no_mixed_keys, hash_rockets
+Style/HashSyntax:
+  Enabled: false
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: normal, rails
+Style/IndentationConsistency:
+  Exclude:
+    - 'config/routes.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+Style/LeadingCommentSpace:
+  Exclude:
+    - 'Gemfile'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+Style/NumericLiterals:
+  MinDigits: 15
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: AllowForAlignment.
+Style/SpaceAroundOperators:
+  Exclude:
+    - 'db/migrate/20160510183502_create_bookmarks.blacklight.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: AllowForAlignment.
+Style/SpaceBeforeFirstArg:
+  Exclude:
+    - 'db/migrate/20160510183501_create_searches.blacklight.rb'
+
+# Offense count: 2
+# Cop supports --auto-correct.
+Style/SpaceInsideParens:
+  Exclude:
+    - 'app/models/solr_document.rb'
+
+# Offense count: 119
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, ConsistentQuotesInMultiline.
+# SupportedStyles: single_quotes, double_quotes
+Style/StringLiterals:
+  Enabled: false
+
+# Offense count: 3
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: final_newline, final_blank_line
+Style/TrailingBlankLines:
+  Exclude:
+    - 'config/initializers/mime_types.rb'
+    - 'db/migrate/20160510183510_add_devise_guests_to_users.rb'
+    - 'lib/tasks/fedora-migrate.rake'
+
+# Offense count: 7
+# Cop supports --auto-correct.
+Style/TrailingWhitespace:
+  Exclude:
+    - 'app/models/ability.rb'
+    - 'app/models/solr_document.rb'
+    - 'config/application.rb'
+    - 'config/routes.rb'
+    - 'db/migrate/20160510183502_create_bookmarks.blacklight.rb'
+    - 'db/migrate/20160510183503_add_polymorphic_type_to_bookmarks.blacklight.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: SupportedStyles, WordRegex.
+# SupportedStyles: percent, brackets
+Style/WordArray:
+  EnforcedStyle: percent
+  MinSize: 3

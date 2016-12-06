@@ -1,0 +1,8 @@
+<%#TODO% if current_user.admin? %>
+<% if true %>
+  <%= render 'admin_home' %>
+<% else %>
+  <%# Plain-old-users should never be able to reach this page, but just in case... %>
+  <h1>Redirecting to Contributor Deposit</h1>
+  <%= redirect_to contributions_path %>
+<% end %>

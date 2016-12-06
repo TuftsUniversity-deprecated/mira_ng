@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,12 +30,29 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Resque Gems
+gem 'resque-pool'    
+gem 'resque-status'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'solr_wrapper'
   gem 'fcrepo_wrapper'
+  gem 'rspec-rails', '~> 3.2'
+  gem 'sqlite3'
+  gem 'rubocop', '~> 0.46.0', require: false
+  gem 'rubocop-rspec'
+end
 
+group :test do
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'factory_girl_rails'
+  gem 'webmock'
+  gem 'database_cleaner'
+  gem 'rspec-activemodel-mocks'
+  gem 'ladle'
 end
 
 group :development do

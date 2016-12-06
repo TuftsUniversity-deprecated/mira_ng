@@ -1,0 +1,30 @@
+require: rubocop-rspec
+inherit_from: .rubocop_todo.yml
+AllCops:
+  TargetRubyVersion: 2.2
+  DisplayCopNames: true
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - 'bin/**/*'
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+    - 'spec/**/*'
+    - 'config/initializers/patch-net_http.rb'
+Lint/UnusedBlockArgument:
+  Exclude:
+    - 'config/initializers/hydra_config.rb'
+Metrics/ClassLength:
+  Exclude:
+    - 'app/controllers/catalog_controller.rb'
+Metrics/LineLength:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Rails:
+  Enabled: true

@@ -49,3 +49,4 @@ uploads
 # redis junk
 dump.rdb
 
+public/assets

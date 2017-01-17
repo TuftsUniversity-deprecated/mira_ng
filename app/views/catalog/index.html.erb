@@ -1,0 +1,17 @@
+<% content_for(:sidebar) do %>
+  <%= render 'search_sidebar' %>
+<% end %>
+
+<% unless has_search_parameters? %>
+  <%# if there are no input/search related params, display the "home" partial -%>
+  <%#TODO% if current_user.admin? %>
+  <% if true %>   
+    <%= render 'admin_home' %>
+  <% else %>
+    <h1>Redirecting to Contributor Deposit</h1>
+    <%= redirect_to contributions_path %>
+  <% end %>
+  <%= render 'shared/sitelinks_search_box' %>
+<% else %>
+  <%= render 'search_results' %>
+<% end %>

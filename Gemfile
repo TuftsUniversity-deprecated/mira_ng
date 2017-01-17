@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.7.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -14,6 +14,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'tufts_models_ng', :path => '/Users/mkorcy01/Documents/workspace/2016/tufts_models_ng'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -33,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Resque Gems
 gem 'resque-pool'    
 gem 'resque-status'
+gem 'bootstrap_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,6 +46,8 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rubocop', '~> 0.46.0', require: false
   gem 'rubocop-rspec'
+  gem 'html_routes', '~> 1.0', group: :development
+
 end
 
 group :test do

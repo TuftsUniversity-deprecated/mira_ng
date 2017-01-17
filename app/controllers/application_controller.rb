@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
       redirect_to root_url, :alert => exception.message
     else
       session["user_return_to"] = request.url
-      redirect_to new_user_session_url, :alert => exception.message
+      redirect_to main_app.new_user_session_url, :alert => exception.message
     end
   end
 end

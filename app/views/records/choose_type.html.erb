@@ -1,0 +1,12 @@
+<h1>Create a new record</h1>
+
+<%= bootstrap_form_tag url: '/', method: :get, html: { class: 'col-md-7' } do |f| %>
+  <%= f.form_group :type, id: 'type', label: { text: 'Select an object type' } do %>
+    <%= select_tag :type, options_for_select(sorted_object_types), class: 'form-control' %>
+  <% end %>
+  <%= f.form_group :displays, id: 'displays', label: { text: 'Displays' } do %>
+    <%= select_tag :displays, options_for_select(displays_options), class: 'form-control' %>
+  <% end %>
+
+  <%= f.primary 'Next'%>
+<% end %>

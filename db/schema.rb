@@ -13,6 +13,18 @@
 
 ActiveRecord::Schema.define(version: 20160711144750) do
 
+  create_table "batches", force: :cascade do |t|
+    t.integer  "creator_id"
+    t.string   "template_id"
+    t.string   "type"
+    t.text     "pids"
+    t.datetime "created_at"
+    t.text     "job_ids"
+    t.string   "record_type"
+    t.string   "metadata_file"
+    t.string   "behavior"
+  end
+
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
     t.string   "user_type"
@@ -60,6 +72,18 @@ ActiveRecord::Schema.define(version: 20160711144750) do
   add_index "curation_concerns_operations", ["rgt"], name: "index_curation_concerns_operations_on_rgt"
   add_index "curation_concerns_operations", ["user_id"], name: "index_curation_concerns_operations_on_user_id"
 
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "roles_users", id: false, force: :cascade do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
+  add_index "roles_users", ["role_id", "user_id"], name: "index_roles_users_on_role_id_and_user_id"
+  add_index "roles_users", ["user_id", "role_id"], name: "index_roles_users_on_user_id_and_role_id"
+
   create_table "searches", force: :cascade do |t|
     t.text     "query_params"
     t.integer  "user_id"
@@ -70,6 +94,11 @@ ActiveRecord::Schema.define(version: 20160711144750) do
 
   add_index "searches", ["user_id"], name: "index_searches_on_user_id"
 
+  create_table "sequences", force: :cascade do |t|
+    t.integer "value", default: 0
+    t.string  "scope"
+  end
+
   create_table "single_use_links", force: :cascade do |t|
     t.string   "downloadKey"
     t.string   "path"
@@ -78,6 +107,15 @@ ActiveRecord::Schema.define(version: 20160711144750) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "uploaded_files", force: :cascade do |t|
+    t.integer "batch_id"
+    t.string  "pid"
+    t.string  "dsid"
+    t.string  "filename"
+  end
+
+  add_index "uploaded_files", ["batch_id"], name: "index_uploaded_files_on_batch_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username",               default: "",    null: false

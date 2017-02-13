@@ -16,8 +16,10 @@ require 'fcrepo_wrapper'
 
 desc 'Run the default CI configuration'
 task :ci do
-  SolrWrapper.wrap do
-    FcrepoWrapper.wrap do
+  SolrWrapper.wrap port: 8985 do |solr|
+    solr.with_collection(name: 'hydra-test', dir: 'solr/config')
+
+    FcrepoWrapper.wrap port: 8986 do
       # Something that requires Fcrepo
       Rake::Task['spec'].invoke
     end

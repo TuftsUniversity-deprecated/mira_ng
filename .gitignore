@@ -50,3 +50,5 @@ uploads
 dump.rdb
 
 public/assets
+.byebug_history
+migration_report/

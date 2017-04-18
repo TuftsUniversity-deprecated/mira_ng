@@ -11,10 +11,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'tufts_models_ng', :path => '/Users/mkorcy01/Documents/workspace/2016/tufts_models_ng'
+gem 'tufts_models_ng', github: 'TuftsUniversity/tufts_concerns', tag: '0.0.4'
+# :path => '/Users/mkorcy01/Documents/workspace/2016/tufts_models_ng'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '~> 5.0.5'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -23,15 +24,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
+gem 'fedora-migrate', :path => '/Users/mkorcy01/Documents/workspace/2016/fedora-migrate'
 # Resque Gems
 gem 'resque-pool'    
 gem 'resque-status'
@@ -40,7 +33,7 @@ gem 'bootstrap_form'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'solr_wrapper'
+  gem 'solr_wrapper' #, :path => '/Users/mkorcy01/Documents/workspace/2016/solr_wrapper'
   gem 'fcrepo_wrapper'
   gem 'rspec-rails', '~> 3.2'
   gem 'sqlite3'

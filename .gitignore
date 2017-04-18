@@ -33,6 +33,8 @@ config/resque-pool.yml
 config/secrets.yml
 config/solr.yml
 config/ldap.yml
+config/blacklight.yml
+config/fedora3.yml
 
 # Ignore RubyMine config files
 .idea/

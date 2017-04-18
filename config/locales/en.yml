@@ -2,9 +2,20 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  curation_concerns:
+    institution:
+      name: "Tufts University"
+      homepage_url: "http://dl.tufts.edu"
+    institution_name:  &INSTITUTION_NAME "Tufts University"
+    product_name: "MIRA"
   blacklight:
     application_name: "MIRA - Tufts Digital Library"
     back_to_search: "Back to Search Results"
+    search:
+      fields:
+        index:
+          legacy_pid_tesim: "Legacy PID"
+
   hydra_editor:
     form:
       field_label:

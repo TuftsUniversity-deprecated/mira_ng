@@ -1,5 +1,5 @@
-<% content_for(:sidebar) do %>
-  <%= render 'search_sidebar' %>
+<% provide :sidebar do %>
+    <%= render 'search_sidebar' %>
 <% end %>
 
 <% unless has_search_parameters? %>

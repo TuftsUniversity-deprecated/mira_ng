@@ -1,46 +1,62 @@
-  <h1>Tufts Digital Library Admin</h1>
+<h1>Tufts Digital Library Admin</h1>
 
-  <h2>Admin</h2>
-  <nav>
-    <ul class="item-options quick-classify">
-      <% classification = CurationConcerns::QuickClassificationQuery.new(current_user) %>
-      <% classification.each do |concern| %>
-          <li><%= link_to(
-                      "New #{concern.human_readable_type}",
-                      new_polymorphic_path([main_app, concern]),
-                      class: "item-option contextual-quick-classify #{dom_class(concern, 'new').gsub('_', '-')}",
-                      role: 'menuitem'
-                  ) %>
-          </li>
-      <% end %>
-      <% unless classification.all? %>
-          <li><%= link_to 'More Options', curation_concerns.new_classify_concern_path, class: 'item-option link-to-full-list', role: 'menuitem' %></li>
-      <% end %>
-    </ul>
+<h2>Admin</h2>
+<nav>
+  <ul>
+    <li class="dropdown">
+      <a id="add-content" class="dropdown-toggle" data-toggle="dropdown" href="/classify_concerns/new" aria-expanded="false">
+        </span><span>Add a Work</span>
+      </a>
+      <ul class="dropdown-menu quick-create">
+        <li>
 
-    <ul>
-      <li><%= link_to 'Unpublished objects', '#' %></li>
-      <li><%= link_to 'Handle.net log', '#' %></li>
-    </ul>
-  </nav>
 
-  <h2> Self Deposit </h2>
-  <nav>
-    <ul>
-      <li><%= link_to 'Manage self-deposit types', '#' %></li>
-      <li><%= link_to 'Contribute a new Self-Deposit item', '#' %></li>
-    </ul>
-  </nav>
+          <ul class="item-options quick-classify">
+            <% classification = CurationConcerns::QuickClassificationQuery.new(current_user) %>
 
-  <h2> Batch Operations </h2>
-  <nav>
-    <ul>
-      <li> <%= link_to 'View Batch Statuses', '#' %> </li>
-      <li> <%= link_to 'Manage metadata templates', '#' %> </li>
-      <li> <%= link_to 'Start a Template-based import', '#' %> </li>
-      <li> <%= link_to 'Import Archival Content', '#' %> </li>
-      <li> <%= link_to 'Replace Raw Metadata', '#' %> </li>
-    </ul>
-  </nav>
+            <% classification.each do |concern| %>
+                <li><%= link_to(
+                            "New #{concern.human_readable_type}",
+                            new_polymorphic_path([main_app, concern]),
+                            class: "item-option contextual-quick-classify #{dom_class(concern, 'new').gsub('_', '-')}",
+                            role: 'menuitem'
+                        ) %>
+                </li>
+            <% end %>
+            <% unless classification.all? %>
+                <li><%= link_to 'More Options', curation_concerns.new_classify_concern_path, class: 'item-option link-to-full-list', role: 'menuitem' %></li>
+            <% end %>
+
+          </ul>
+
+        </li>
+        <li class="divider"></li>
+        <li><a class="menu-heading new-collection" role="menuitem" href="/collections/new">Add a Collection</a></li>
+      </ul>
+    </li>
+
+    <li><%= link_to 'Unpublished objects', '#' %></li>
+    <li><%= link_to 'Handle.net log', '#' %></li>
+  </ul>
+</nav>
+
+<h2> Self Deposit </h2>
+<nav>
+  <ul>
+    <li><%= link_to 'Manage self-deposit types', '#' %></li>
+    <li><%= link_to 'Contribute a new Self-Deposit item', '#' %></li>
+  </ul>
+</nav>
+
+<h2> Batch Operations </h2>
+<nav>
+  <ul>
+    <li> <%= link_to 'View Batch Statuses', '#' %> </li>
+    <li> <%= link_to 'Manage metadata templates', '#' %> </li>
+    <li> <%= link_to 'Start a Template-based import', '#' %> </li>
+    <li> <%= link_to 'Import Archival Content', '#' %> </li>
+    <li> <%= link_to 'Replace Raw Metadata', '#' %> </li>
+  </ul>
+</nav>
 
 

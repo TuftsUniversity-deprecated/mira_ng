@@ -8,11 +8,14 @@ class ApplicationController < ActionController::Base
 
   # Adds CurationConcerns behaviors to the application controller.
   include CurationConcerns::ApplicationControllerBehavior
-  # include CurationConcerns::ThemedLayoutController
+  include CurationConcerns::ThemedLayoutController
 
   layout 'blacklight'
+  with_themed_layout '1_column'
 
-#  before_action :authenticate_user!
+  before_filter :authenticate_user!
+
+  #  before_action :authenticate_user!
 
   # Catch permission errors
   rescue_from Hydra::AccessDenied, CanCan::AccessDenied do |exception|

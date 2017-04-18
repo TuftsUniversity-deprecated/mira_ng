@@ -1,0 +1,8 @@
+tufts:pa.sheriff.lycoming.1795
+tufts:pa.sheriff.lycoming.1798
+tufts:pa.sheriff.somerset.1798
+tufts:pa.sheriff.mifflin.1798
+tufts:pa.assembly.bedford.special.1802
+tufts:pa.assembly.centre.1802
+tufts:pa.sheriff.waynecounty.1798
+tufts:pa.assembly.lycoming.1802
